@@ -1,9 +1,22 @@
 #!/bin/bash
 
 
+cd `dirname $0`
+
+COLO_BLK='\e[0;30m' ; COLO_DGRY='\e[1;30m'
+COLO_BLU='\e[0;34m' ; COLO_LBLU='\e[1;34m'
+COLO_GRN='\e[0;32m' ; COLO_LGRN='\e[1;32m'
+COLO_RYN='\e[0;36m' ; COLO_LRYN='\e[1;36m'
+COLO_RED='\e[0;31m' ; COLO_LRED='\e[1;31m'
+COLO_PPL='\e[0;35m' ; COLO_LPPL='\e[1;35m'
+COLO_ORG='\e[0;33m' ; COLO_YLW='\e[1;33m'
+COLO_LGR='\e[0;37m' ; COLO_WHT='\e[1;37m'
+COLO_NC='\e[0m'
+
 log() {
-  printf "[%24s] --- : $1\n" "$(date +"%Y-%m-%d %H:%M:%S.%6N")"
+  printf "${COLO_GRN}[%24s] --- :${COLO_NC} $1\n" "$(date +"%Y-%m-%d %H:%M:%S.%6N")"
 }
+
 
 log "install pathogen.vim" 
 test -f ~/.vim/autoload/pathogen.vim || {
